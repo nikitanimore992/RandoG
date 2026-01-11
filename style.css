@@ -37,7 +37,8 @@ a{
 
   .joke-box1 {
     background: rgba(242, 188, 129, 0.9);
-    width: 350px;
+    width: 90%;            /* responsive width */
+    max-width: 350px;      /* limit width on large screens */
     padding: 15px;
     border-radius: 10px;
     text-align: center;
@@ -76,9 +77,11 @@ a{
         text-align: center;
         margin-top: 20px;
 }
-img{
+.people-img img {
     width: 100%;
-    height: 250px;
+    height: auto;          /* auto height for responsiveness */
+    max-height: 250px;
+    object-fit: cover;     /* prevents image distortion */
 }
 
 .footer {
@@ -105,4 +108,48 @@ img{
 .footer a:hover {
     text-decoration: underline;
 }
-       
+ 
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .joke-box {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+
+    .people-img img {
+        max-height: 180px;
+    }
+
+    .footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+@media (max-width: 480px) {
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: 13px;
+    }
+
+    .joke-box1 {
+        padding: 12px;
+    }
+}
