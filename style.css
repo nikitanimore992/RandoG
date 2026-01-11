@@ -1,10 +1,17 @@
-
-     body {
+/* ================= GLOBAL ================= */
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: rgba(223, 222, 214, 0.534);
-    padding-bottom: 50px;
+    padding-bottom: 80px; /* footer space */
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -23,67 +30,71 @@
 .nav-links li {
     cursor: pointer;
 }
-a{
-    text-decoration: none;
-    color: white;
-}
 
+/* ================= JOKE SECTION (DESKTOP SAME) ================= */
 .joke-box {
-    height: 50vh;                 /* full screen height */
+    height: 50vh;
     display: flex;
-    justify-content: center;       /* horizontal center */
-    align-items: center;           /* vertical center */
+    justify-content: center;
+    align-items: center;
 }
 
-  .joke-box1 {
+.joke-box1 {
     background: rgba(242, 188, 129, 0.9);
-    width: 90%;            /* responsive width */
-    max-width: 350px;      /* limit width on large screens */
+    width: 90%;
+    max-width: 350px;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-        h2 {
-            margin-bottom: 10px;
-            color: #333;
-        }
-        h5{
-            color: #4e4a4a95;
-        }
-
-        #joke {
-            font-size: 16px;
-            color: #555;
-            min-height: 60px;
-            margin-bottom: 10px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background: #667eea;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #5a67d8;
-        }
-        .people-img {
-        text-align: center;
-        margin-top: 20px;
+h2 {
+    margin-bottom: 10px;
+    color: #333;
 }
+
+h5 {
+    color: #4e4a4a95;
+    line-height: 1.5;
+}
+
+#joke {
+    font-size: 16px;
+    color: #555;
+    min-height: 60px;
+    margin-bottom: 10px;
+}
+
+/* ================= BUTTON ================= */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #667eea;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5a67d8;
+}
+
+/* ================= IMAGE (DESKTOP SAME) ================= */
+.people-img {
+    text-align: center;
+    margin-top: 20px;
+}
+
 .people-img img {
     width: 100%;
-    height: auto;          /* auto height for responsiveness */
+    height: auto;
     max-height: 250px;
-    object-fit: cover;     /* prevents image distortion */
+    object-fit: cover;
 }
 
+/* ================= FOOTER ================= */
 .footer {
     width: 100%;
     background: #333;
@@ -99,28 +110,72 @@ a{
 .footer strong {
     color: #ffcc00;
 }
+
 .footer a {
     color: #ffcc00;
-    text-decoration: none;
     margin: 0 5px;
 }
 
 .footer a:hover {
     text-decoration: underline;
 }
- 
+
+/* ================================================= */
+/* ================= MOBILE VIEW ONLY ============== */
+/* ================================================= */
+
 @media (max-width: 768px) {
 
+    /* Navbar */
     .navbar {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
+        gap: 8px;
+        padding: 10px;
     }
 
+    /* Joke Section */
     .joke-box {
         height: auto;
-        padding: 20px 0;
+        padding: 30px 15px;
     }
+
+    .joke-box1 {
+        width: 100%;
+        max-width: 420px;      /* 👈 bigger card on mobile */
+        padding: 22px;
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* Image mobile fix */
+    .people-img {
+        margin-top: 30px;
+    }
+
+    .people-img img {
+        max-height: 120px;     /* 👈 small & attractive */
+        object-fit: contain;
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 11px;
+        padding: 10px;
+    }
+}
+
+/* ================= SMALL PHONES ================= */
+@media (max-width: 480px) {
 
     h2 {
         font-size: 20px;
@@ -131,25 +186,6 @@ a{
     }
 
     .people-img img {
-        max-height: 180px;
-    }
-
-    .footer {
-        font-size: 12px;
-        padding: 10px;
-    }
-}
-@media (max-width: 480px) {
-
-    h2 {
-        font-size: 18px;
-    }
-
-    h5 {
-        font-size: 13px;
-    }
-
-    .joke-box1 {
-        padding: 12px;
+        max-height: 95px;
     }
 }
